@@ -74,8 +74,8 @@ public class RecipeApiClient {
         @Override
         public void run() {
             try {
-                Response response = getRecipes(query, pageNumber).execute();
-                if(cancelRequest = true){
+                Response<RecipeSearchResponse> response = getRecipes(query, pageNumber).execute();
+                if(cancelRequest == true){
                     return;
                 }
                 if(response.code() == 200){
